@@ -2,16 +2,19 @@ function mincost(arr)
 { 
 //write your code here
 // return the min cost
-	let sortedArr=arr.sort();
-	let minsum=0;
-	for(let i=0;i<sortedArr.length;i++){
-		let sum=0;
-		for(let j=0;j<=i;j++){
-			sum+=sortedArr[j];
-		}
-		minisum+=sum;
+	arr.sort();
+	let totalCost=0;
+	while(arr.length>1){
+	    const first=arr.shift();
+	    const second=arr.shift();
+	    
+	    const cost=first+second;
+	    
+	    totalCost+=cost;
+	    arr.push(cost);
+	    arr.sort();
 	}
-	return minsum;
+	return totalCost;
   
 }
 
