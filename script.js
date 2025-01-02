@@ -2,7 +2,8 @@ function mincost(arr)
 { 
 //write your code here
 // return the min cost
-	aarr.sort((a, b) => a - b);
+	arr.sort((a, b) => a - b);
+	console.log(arr);
 	let totalCost=0;
 	while(arr.length>1){
 	    const first=arr.shift();
@@ -13,6 +14,7 @@ function mincost(arr)
 	    totalCost+=cost;
 	    arr.push(cost);
 	    arr.sort((a, b) => a - b);
+	    //console.log(arr);
 	}
 	return totalCost;
   
